@@ -242,40 +242,40 @@ namespace BlogDemo.Api.Controllers
         }
 
         [HttpPatch("{id}", Name = "PartiallyUpdatePost")]
-        //public async Task<IActionResult> PartiallyUpdatePost(int id, [FromBody] JsonPatchDocument patchDoc)
-        //{
-        //    if (patchDoc == null)
-        //    {
-        //        return BadRequest();
-        //    }
+        public async Task<IActionResult> PartiallyUpdatePost(int id, [FromBody] JsonPatchDocument<PostUpdateResource> patchDoc)
+        {
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
 
-        //    var post = await _postRepository.GetPostByIdAsync(id);
-        //    if (post == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var post = await _postRepository.GetPostByIdAsync(id);
+            if (post == null)
+            {
+                return NotFound();
+            }
 
-        //    var postToPatch = _mapper.Map<PostUpdateResource>(post);
+            var postToPatch = _mapper.Map<PostUpdateResource>(post);
 
-        //    patchDoc.ApplyTo(postToPatch, ModelState);
-        //    TryValidateModel(postToPatch);
+            patchDoc.ApplyTo(postToPatch, ModelState);
+            TryValidateModel(postToPatch);
 
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return new MyUnprocessableEntityObjectResult(ModelState);
-        //    }
+            if (!ModelState.IsValid)
+            {
+                return new MyUnprocessableEntityObjectResult(ModelState);
+            }
 
-        //    _mapper.Map(postToPatch, post);
-        //    post.LastModified = DateTime.Now;
-        //    _postRepository.Update(post);
+            _mapper.Map(postToPatch, post);
+            post.LastModified = DateTime.Now;
+            _postRepository.Update(post);
 
-        //    if (!await _unitOfWork.SaveAsync())
-        //    {
-        //        throw new Exception($"Patching post {id} failed when saving.");
-        //    }
+            if (!await _unitOfWork.SaveAsync())
+            {
+                throw new Exception($"Patching post {id} failed when saving.");
+            }
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
 
 
         private string CreatePostUri(PostParameters parameters, PaginationResourceUriType uriType)

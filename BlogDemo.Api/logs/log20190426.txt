@@ -993,3 +993,385 @@ LIMIT @__p_1 OFFSET @__p_0
 2019-04-26 11:54:02.423 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Dynamic.ExpandoObject, System.Linq.Expressions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]'.
 2019-04-26 11:54:02.437 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 733.78230000000008ms
 2019-04-26 11:54:02.440 -04:00 [INF] Request finished in 767.3722ms 200 application/json; charset=utf-8
+2019-04-26 12:43:40.110 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:43:40.537 -04:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:43:40.576 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Author", "p"."Body", "p"."LastModified", "p"."Remark", "p"."Title"
+FROM "Posts" AS "p"
+2019-04-26 12:43:40.724 -04:00 [INF] User profile is available. Using 'C:\Users\rli\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-26 12:43:44.779 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/values  
+2019-04-26 12:43:44.807 -04:00 [INF] Request finished in 28.4872ms 307 
+2019-04-26 12:43:44.919 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/values  
+2019-04-26 12:43:45.060 -04:00 [INF] Route matched with {action = "Index", controller = "Value"}. Executing action BlogDemo.Api.Controllers.ValueController.Index (BlogDemo.Api)
+2019-04-26 12:43:45.084 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.ValueController.Index (BlogDemo.Api) - Validation state: "Valid"
+2019-04-26 12:43:45.100 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.ValueController.Index (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.0684ms.
+2019-04-26 12:43:45.118 -04:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2019-04-26 12:43:45.134 -04:00 [INF] Executed action BlogDemo.Api.Controllers.ValueController.Index (BlogDemo.Api) in 68.0339ms
+2019-04-26 12:43:45.149 -04:00 [INF] Request finished in 229.0087ms 200 text/plain; charset=utf-8
+2019-04-26 12:43:45.195 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+2019-04-26 12:43:45.198 -04:00 [INF] Request finished in 3.0963ms 404 
+2019-04-26 12:49:32.579 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5001/api/posts/1 application/json-patch+json 90
+2019-04-26 12:49:32.601 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:49:33.000 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Invalid"
+2019-04-26 12:49:33.020 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.BadRequestResult in 3.967ms.
+2019-04-26 12:49:33.026 -04:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 400
+2019-04-26 12:49:33.028 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 424.8609ms
+2019-04-26 12:49:33.032 -04:00 [INF] Request finished in 453.2947ms 400 
+2019-04-26 12:50:12.224 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/1 application/json-patch+json 90
+2019-04-26 12:50:12.228 -04:00 [INF] Request finished in 4.2528ms 307 
+2019-04-26 12:50:12.242 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/1 application/json-patch+json 90
+2019-04-26 12:50:12.248 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000001": the application completed without reading the entire request body.
+2019-04-26 12:50:12.250 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:50:12.259 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Invalid"
+2019-04-26 12:50:12.262 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.BadRequestResult in 0.044000000000000004ms.
+2019-04-26 12:50:12.265 -04:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 400
+2019-04-26 12:50:12.266 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 11.544500000000001ms
+2019-04-26 12:50:12.270 -04:00 [INF] Request finished in 27.8787ms 400 
+2019-04-26 12:50:22.007 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/1 application/json-patch+json 90
+2019-04-26 12:50:22.016 -04:00 [INF] Request finished in 9.0355ms 307 
+2019-04-26 12:50:22.019 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000002": the application completed without reading the entire request body.
+2019-04-26 12:50:22.033 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/1 application/json-patch+json 90
+2019-04-26 12:50:22.035 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:50:22.039 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Invalid"
+2019-04-26 12:51:32.596 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.BadRequestResult in 70549.4966ms.
+2019-04-26 12:51:32.608 -04:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 400
+2019-04-26 12:51:32.612 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 70575.016700000007ms
+2019-04-26 12:51:32.617 -04:00 [INF] Request finished in 70584.2434ms 400 
+2019-04-26 12:51:36.692 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/1 application/json-patch+json 84
+2019-04-26 12:51:36.695 -04:00 [INF] Request finished in 2.869ms 307 
+2019-04-26 12:51:36.698 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000003": the application completed without reading the entire request body.
+2019-04-26 12:51:36.712 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/1 application/json-patch+json 84
+2019-04-26 12:51:36.717 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:51:36.723 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Invalid"
+2019-04-26 12:51:36.726 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.BadRequestResult in 0.0072000000000000007ms.
+2019-04-26 12:51:36.735 -04:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 400
+2019-04-26 12:51:36.737 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 16.494600000000002ms
+2019-04-26 12:51:36.743 -04:00 [INF] Request finished in 30.9498ms 400 
+2019-04-26 12:51:47.855 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/1 application/json-patch+json 84
+2019-04-26 12:51:47.863 -04:00 [INF] Request finished in 8.3246ms 307 
+2019-04-26 12:51:47.868 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000004": the application completed without reading the entire request body.
+2019-04-26 12:51:47.873 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/1 application/json-patch+json 84
+2019-04-26 12:51:47.879 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:51:47.884 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Invalid"
+2019-04-26 12:51:52.736 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.BadRequestResult in 4845.1186ms.
+2019-04-26 12:51:52.742 -04:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 400
+2019-04-26 12:51:52.744 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 4862.5807ms
+2019-04-26 12:51:52.750 -04:00 [INF] Request finished in 4877.394ms 400 
+2019-04-26 12:53:35.676 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/1 application/json-patch+json 95
+2019-04-26 12:53:35.679 -04:00 [INF] Request finished in 2.5294ms 307 
+2019-04-26 12:53:35.690 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000005": the application completed without reading the entire request body.
+2019-04-26 12:53:35.697 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/1 application/json-patch+json 95
+2019-04-26 12:53:35.709 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:53:35.732 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1","Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BlogDemo.Infrastructure.Resources.PostUpdateResource]"]) - Validation state: "Valid"
+2019-04-26 12:53:40.938 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:53:41.122 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:53:41.175 -04:00 [INF] Executed DbCommand (14ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:53:41.310 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result BlogDemo.Api.Helpers.MyUnprocessableEntityObjectResult in 5569.902ms.
+2019-04-26 12:53:41.313 -04:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Api.Helpers.ResourceValidationResult'.
+2019-04-26 12:53:41.325 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 5612.7307ms
+2019-04-26 12:53:41.330 -04:00 [INF] Request finished in 5633.2735ms 422 application/json; charset=utf-8
+2019-04-26 12:54:10.738 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/1 application/json-patch+json 95
+2019-04-26 12:54:10.740 -04:00 [INF] Request finished in 2.3001ms 307 
+2019-04-26 12:54:10.742 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000006": the application completed without reading the entire request body.
+2019-04-26 12:54:10.753 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/1 application/json-patch+json 95
+2019-04-26 12:54:10.756 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:54:10.761 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1","Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BlogDemo.Infrastructure.Resources.PostUpdateResource]"]) - Validation state: "Valid"
+2019-04-26 12:54:10.770 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:54:10.781 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:54:10.789 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:54:10.808 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result BlogDemo.Api.Helpers.MyUnprocessableEntityObjectResult in 38.429500000000004ms.
+2019-04-26 12:54:10.812 -04:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Api.Helpers.ResourceValidationResult'.
+2019-04-26 12:54:10.816 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 56.063300000000005ms
+2019-04-26 12:54:10.822 -04:00 [INF] Request finished in 68.8855ms 422 application/json; charset=utf-8
+2019-04-26 12:54:25.312 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts/1  
+2019-04-26 12:54:25.330 -04:00 [INF] Request finished in 19.72ms 307 
+2019-04-26 12:54:25.337 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts/1  
+2019-04-26 12:54:25.347 -04:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2019-04-26 12:54:25.355 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Valid"
+2019-04-26 12:54:25.368 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:54:25.377 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:54:25.380 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:54:25.409 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 43.351600000000005ms.
+2019-04-26 12:54:25.412 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Dynamic.ExpandoObject'.
+2019-04-26 12:54:25.426 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 72.612400000000008ms
+2019-04-26 12:54:25.431 -04:00 [INF] Request finished in 93.9268ms 200 application/json; charset=utf-8
+2019-04-26 12:55:13.583 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/1 application/json-patch+json 89
+2019-04-26 12:55:13.590 -04:00 [INF] Request finished in 6.8726ms 307 
+2019-04-26 12:55:13.596 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000008": the application completed without reading the entire request body.
+2019-04-26 12:55:13.609 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/1 application/json-patch+json 89
+2019-04-26 12:55:13.611 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:55:13.616 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Invalid"
+2019-04-26 12:55:13.622 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.BadRequestResult in 0.0078000000000000005ms.
+2019-04-26 12:55:13.625 -04:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 400
+2019-04-26 12:55:13.627 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 12.320500000000001ms
+2019-04-26 12:55:13.635 -04:00 [INF] Request finished in 25.8358ms 400 
+2019-04-26 12:55:59.935 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/1 application/json-patch+json 144
+2019-04-26 12:55:59.940 -04:00 [INF] Request finished in 5.0283ms 307 
+2019-04-26 12:55:59.949 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000009": the application completed without reading the entire request body.
+2019-04-26 12:55:59.952 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/1 application/json-patch+json 144
+2019-04-26 12:55:59.954 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:55:59.958 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["1","Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BlogDemo.Infrastructure.Resources.PostUpdateResource]"]) - Validation state: "Valid"
+2019-04-26 12:55:59.965 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:55:59.969 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:55:59.975 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:55:59.990 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result BlogDemo.Api.Helpers.MyUnprocessableEntityObjectResult in 25.7818ms.
+2019-04-26 12:56:00.023 -04:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Api.Helpers.ResourceValidationResult'.
+2019-04-26 12:56:00.027 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 69.5079ms
+2019-04-26 12:56:00.031 -04:00 [INF] Request finished in 78.9028ms 422 application/json; charset=utf-8
+2019-04-26 12:56:15.115 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/3 application/json-patch+json 144
+2019-04-26 12:56:15.162 -04:00 [INF] Request finished in 46.3629ms 307 
+2019-04-26 12:56:15.179 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/3 application/json-patch+json 144
+2019-04-26 12:56:15.179 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:0000000A": the application completed without reading the entire request body.
+2019-04-26 12:56:15.185 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:56:15.192 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["3","Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BlogDemo.Infrastructure.Resources.PostUpdateResource]"]) - Validation state: "Valid"
+2019-04-26 12:56:15.197 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:56:15.204 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:56:15.209 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:56:15.212 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result BlogDemo.Api.Helpers.MyUnprocessableEntityObjectResult in 15.9297ms.
+2019-04-26 12:56:15.215 -04:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Api.Helpers.ResourceValidationResult'.
+2019-04-26 12:56:15.217 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 25.309700000000003ms
+2019-04-26 12:56:15.218 -04:00 [INF] Request finished in 39.2875ms 422 application/json; charset=utf-8
+2019-04-26 12:56:23.096 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts/1  
+2019-04-26 12:56:23.098 -04:00 [INF] Request finished in 1.284ms 307 
+2019-04-26 12:56:23.099 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts/1  
+2019-04-26 12:56:23.100 -04:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2019-04-26 12:56:23.102 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["1",""]) - Validation state: "Valid"
+2019-04-26 12:56:23.107 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:56:23.110 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:56:23.112 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:56:23.115 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.4804000000000013ms.
+2019-04-26 12:56:23.117 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Dynamic.ExpandoObject'.
+2019-04-26 12:56:23.119 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 16.8842ms
+2019-04-26 12:56:23.122 -04:00 [INF] Request finished in 22.6613ms 200 application/json; charset=utf-8
+2019-04-26 12:56:33.857 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/3 application/json-patch+json 144
+2019-04-26 12:56:33.858 -04:00 [INF] Request finished in 1.3059ms 307 
+2019-04-26 12:56:33.859 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:0000000C": the application completed without reading the entire request body.
+2019-04-26 12:56:33.879 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/3 application/json-patch+json 144
+2019-04-26 12:56:33.880 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:56:33.883 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["3","Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BlogDemo.Infrastructure.Resources.PostUpdateResource]"]) - Validation state: "Valid"
+2019-04-26 12:56:33.887 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:56:33.891 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:56:33.894 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:56:33.897 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result BlogDemo.Api.Helpers.MyUnprocessableEntityObjectResult in 9.975ms.
+2019-04-26 12:56:33.899 -04:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Api.Helpers.ResourceValidationResult'.
+2019-04-26 12:56:33.900 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 18.1825ms
+2019-04-26 12:56:33.903 -04:00 [INF] Request finished in 23.9145ms 422 application/json; charset=utf-8
+2019-04-26 12:56:55.139 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/9 application/json-patch+json 153
+2019-04-26 12:56:55.143 -04:00 [INF] Request finished in 3.9815ms 307 
+2019-04-26 12:56:55.149 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:0000000D": the application completed without reading the entire request body.
+2019-04-26 12:56:55.160 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/9 application/json-patch+json 153
+2019-04-26 12:56:55.162 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:56:55.164 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["9","Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BlogDemo.Infrastructure.Resources.PostUpdateResource]"]) - Validation state: "Valid"
+2019-04-26 12:56:55.171 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:56:55.176 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:56:55.180 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:56:55.185 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result BlogDemo.Api.Helpers.MyUnprocessableEntityObjectResult in 14.1132ms.
+2019-04-26 12:56:55.194 -04:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Api.Helpers.ResourceValidationResult'.
+2019-04-26 12:56:55.197 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 33.417ms
+2019-04-26 12:56:55.199 -04:00 [INF] Request finished in 39.0034ms 422 application/json; charset=utf-8
+2019-04-26 12:57:08.380 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/7 application/json-patch+json 153
+2019-04-26 12:57:08.382 -04:00 [INF] Request finished in 2.3268ms 307 
+2019-04-26 12:57:08.383 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:0000000E": the application completed without reading the entire request body.
+2019-04-26 12:57:08.384 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/7 application/json-patch+json 153
+2019-04-26 12:57:08.388 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:57:08.391 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["7","Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BlogDemo.Infrastructure.Resources.PostUpdateResource]"]) - Validation state: "Valid"
+2019-04-26 12:57:08.393 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:57:08.397 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:57:08.401 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:57:08.406 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result BlogDemo.Api.Helpers.MyUnprocessableEntityObjectResult in 12.9138ms.
+2019-04-26 12:57:08.408 -04:00 [INF] Executing ObjectResult, writing value of type 'BlogDemo.Api.Helpers.ResourceValidationResult'.
+2019-04-26 12:57:08.409 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 19.4387ms
+2019-04-26 12:57:08.411 -04:00 [INF] Request finished in 27.0858ms 422 application/json; charset=utf-8
+2019-04-26 12:57:18.778 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts/9  
+2019-04-26 12:57:18.779 -04:00 [INF] Request finished in 1.4252ms 307 
+2019-04-26 12:57:18.790 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts/9  
+2019-04-26 12:57:18.793 -04:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2019-04-26 12:57:18.794 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["9",""]) - Validation state: "Valid"
+2019-04-26 12:57:18.799 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:57:18.803 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:57:18.809 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:57:18.812 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 13.838600000000001ms.
+2019-04-26 12:57:18.815 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Dynamic.ExpandoObject'.
+2019-04-26 12:57:18.817 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 22.370900000000002ms
+2019-04-26 12:57:18.819 -04:00 [INF] Request finished in 28.1841ms 200 application/json; charset=utf-8
+2019-04-26 12:57:27.389 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts/  
+2019-04-26 12:57:27.391 -04:00 [INF] Request finished in 1.9909ms 307 
+2019-04-26 12:57:27.393 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts/  
+2019-04-26 12:57:27.395 -04:00 [INF] Request finished in 2.375ms 404 
+2019-04-26 12:57:29.565 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts/  
+2019-04-26 12:57:29.566 -04:00 [INF] Request finished in 1.2243ms 307 
+2019-04-26 12:57:29.569 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts/  
+2019-04-26 12:57:29.576 -04:00 [INF] Request finished in 6.2757ms 404 
+2019-04-26 12:57:31.156 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts/  
+2019-04-26 12:57:31.157 -04:00 [INF] Request finished in 1.124ms 307 
+2019-04-26 12:57:31.163 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts/  
+2019-04-26 12:57:31.164 -04:00 [INF] Request finished in 3.759ms 404 
+2019-04-26 12:57:34.992 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts  
+2019-04-26 12:57:35.017 -04:00 [INF] Request finished in 24.8502ms 307 
+2019-04-26 12:57:35.024 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts  
+2019-04-26 12:57:35.030 -04:00 [INF] Request finished in 6.6675ms 404 
+2019-04-26 12:58:14.831 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts  
+2019-04-26 12:58:14.833 -04:00 [INF] Request finished in 2.0311ms 307 
+2019-04-26 12:58:14.847 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts  
+2019-04-26 12:58:14.864 -04:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2019-04-26 12:58:14.872 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2019-04-26 12:58:14.889 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:58:14.941 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:58:14.946 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Posts" AS "p"
+2019-04-26 12:58:14.970 -04:00 [WRN] Query: '(from Post <generated>_2 in DbSet<Post> select [<generated>_2]).Skip(__p_0).Take(__p_1)' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2019-04-26 12:58:14.978 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:58:14.981 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?', @__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Author", "p"."Body", "p"."LastModified", "p"."Remark", "p"."Title"
+FROM "Posts" AS "p"
+LIMIT @__p_1 OFFSET @__p_0
+2019-04-26 12:58:15.046 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 172.0522ms.
+2019-04-26 12:58:15.050 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Dynamic.ExpandoObject, System.Linq.Expressions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]'.
+2019-04-26 12:58:15.053 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 187.8307ms
+2019-04-26 12:58:15.057 -04:00 [INF] Request finished in 210.7111ms 200 application/json; charset=utf-8
+2019-04-26 12:58:39.155 -04:00 [INF] Request starting HTTP/1.1 PATCH http://localhost:5000/api/posts/8 application/json-patch+json 153
+2019-04-26 12:58:39.157 -04:00 [INF] Request finished in 2.5409ms 307 
+2019-04-26 12:58:39.160 -04:00 [INF] Connection id "0HLMACPBHBL5O", Request id "0HLMACPBHBL5O:00000015": the application completed without reading the entire request body.
+2019-04-26 12:58:39.168 -04:00 [INF] Request starting HTTP/1.1 PATCH https://localhost:5000/api/posts/8 application/json-patch+json 153
+2019-04-26 12:58:39.170 -04:00 [INF] Route matched with {action = "PartiallyUpdatePost", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api)
+2019-04-26 12:58:39.172 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) with arguments (["8","Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[BlogDemo.Infrastructure.Resources.PostUpdateResource]"]) - Validation state: "Valid"
+2019-04-26 12:58:39.176 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:58:39.180 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:58:39.185 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Author", "e"."Body", "e"."LastModified", "e"."Remark", "e"."Title"
+FROM "Posts" AS "e"
+WHERE "e"."Id" = @__get_Item_0
+LIMIT 1
+2019-04-26 12:58:39.279 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:58:39.361 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[@p5='?', @p0='?' (Size = 5), @p1='?' (Size = 58), @p2='?', @p3='?', @p4='?' (Size = 24)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Posts" SET "Author" = @p0, "Body" = @p1, "LastModified" = @p2, "Remark" = @p3, "Title" = @p4
+WHERE "Id" = @p5;
+SELECT changes();
+2019-04-26 12:58:39.419 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 243.05470000000003ms.
+2019-04-26 12:58:39.421 -04:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2019-04-26 12:58:39.423 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.PartiallyUpdatePost (BlogDemo.Api) in 251.5492ms
+2019-04-26 12:58:39.425 -04:00 [INF] Request finished in 256.9949ms 204 
+2019-04-26 12:58:53.409 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/posts  
+2019-04-26 12:58:53.411 -04:00 [INF] Request finished in 2.7526ms 307 
+2019-04-26 12:58:53.436 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:5000/api/posts  
+2019-04-26 12:58:53.438 -04:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2019-04-26 12:58:53.439 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2019-04-26 12:58:53.443 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 12:58:53.458 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:58:53.461 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Posts" AS "p"
+2019-04-26 12:58:53.467 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 12:58:53.471 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_1='?', @__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Author", "p"."Body", "p"."LastModified", "p"."Remark", "p"."Title"
+FROM "Posts" AS "p"
+LIMIT @__p_1 OFFSET @__p_0
+2019-04-26 12:58:53.473 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 30.878400000000003ms.
+2019-04-26 12:58:53.475 -04:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Dynamic.ExpandoObject, System.Linq.Expressions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]'.
+2019-04-26 12:58:53.478 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 39.4831ms
+2019-04-26 12:58:53.482 -04:00 [INF] Request finished in 46.5489ms 200 application/json; charset=utf-8
+2019-04-26 16:55:41.469 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 16:55:41.943 -04:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 16:55:41.984 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Author", "p"."Body", "p"."LastModified", "p"."Remark", "p"."Title"
+FROM "Posts" AS "p"
+2019-04-26 16:55:42.168 -04:00 [INF] User profile is available. Using 'C:\Users\rli\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-26 16:56:01.568 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts  
+2019-04-26 16:56:01.596 -04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2019-04-26 16:56:01.707 -04:00 [INF] Route matched with {action = "Get", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api)
+2019-04-26 16:56:01.722 -04:00 [INF] Authorization failed.
+2019-04-26 16:56:01.727 -04:00 [INF] Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+2019-04-26 16:56:01.736 -04:00 [INF] Executing ChallengeResult with authentication schemes ([]).
+2019-04-26 16:56:01.805 -04:00 [INF] AuthenticationScheme: BearerIdentityServerAuthenticationJwt was challenged.
+2019-04-26 16:56:01.808 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2019-04-26 16:56:01.812 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.Get (BlogDemo.Api) in 101.09230000000001ms
+2019-04-26 16:56:01.829 -04:00 [INF] Request finished in 260.3064ms 401 
+2019-04-26 17:39:39.928 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 17:39:40.260 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 17:39:40.295 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Author", "p"."Body", "p"."LastModified", "p"."Remark", "p"."Title"
+FROM "Posts" AS "p"
+2019-04-26 17:39:40.428 -04:00 [INF] User profile is available. Using 'C:\Users\rli\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2019-04-26 17:39:57.695 -04:00 [INF] Request starting HTTP/1.1 GET https://localhost:6001/api/posts  
+2019-04-26 17:39:58.038 -04:00 [INF] Successfully validated the token.
+2019-04-26 17:39:58.045 -04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2019-04-26 17:39:58.151 -04:00 [INF] Route matched with {action = "GetHateoas", controller = "Post"}. Executing action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api)
+2019-04-26 17:39:58.163 -04:00 [INF] Authorization was successful.
+2019-04-26 17:39:58.472 -04:00 [INF] Executing action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) with arguments (["BlogDemo.Core.Entities.PostParameters"]) - Validation state: "Valid"
+2019-04-26 17:39:58.496 -04:00 [INF] Entity Framework Core 2.2.4-servicing-10062 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2019-04-26 17:39:58.590 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 17:39:58.610 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Posts" AS "p"
+2019-04-26 17:39:58.655 -04:00 [WRN] Query: '(from Post <generated>_2 in DbSet<Post> select [<generated>_2]).Skip(__p_0).Take(__p_1)' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results.
+2019-04-26 17:39:58.689 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA foreign_keys=ON;
+2019-04-26 17:39:58.713 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_1='?', @__p_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Author", "p"."Body", "p"."LastModified", "p"."Remark", "p"."Title"
+FROM "Posts" AS "p"
+LIMIT @__p_1 OFFSET @__p_0
+2019-04-26 17:39:58.785 -04:00 [INF] Executed action method BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 298.0709ms.
+2019-04-26 17:39:58.800 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Collections.Generic.IEnumerable`1[[System.Collections.Generic.IDictionary`2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[BlogDemo.Infrastructure.Resources.LinkResource, BlogDemo.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2019-04-26 17:39:58.838 -04:00 [INF] Executed action BlogDemo.Api.Controllers.PostController.GetHateoas (BlogDemo.Api) in 680.49470000000008ms
+2019-04-26 17:39:58.856 -04:00 [INF] Request finished in 1161.7392ms 200 application/vnd.awind.hateoas+json; charset=utf-8
