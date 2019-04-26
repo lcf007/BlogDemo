@@ -11,7 +11,7 @@ namespace BlogDemo.Api.Controllers
     {
         public IActionResult Index()
         {
-            return Ok("Hello");
+            return Ok("api/posts started, Enjoy!");
         }
     }
 }

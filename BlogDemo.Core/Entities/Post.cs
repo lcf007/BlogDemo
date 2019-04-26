@@ -1,7 +1,6 @@
-﻿using BlogDemo.Core.Entites;
-using System;
+﻿using System;
 
-namespace BlogDemo.Core
+namespace BlogDemo.Core.Entities
 {
     public class Post:Entity
     {
@@ -9,5 +8,6 @@ namespace BlogDemo.Core
         public string Body { get; set; }
         public string Author { get; set; }
         public DateTime LastModified { get; set; }
+        public string Remark { get; set; }
     }
 }
