@@ -10,10 +10,17 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using BlogDemo.Api.Helpers;
+using IdentityModel;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 
 namespace BlogDemo.Api.Controllers
@@ -28,6 +35,8 @@ namespace BlogDemo.Api.Controllers
         private readonly IUrlHelper _urlHelper;
         private readonly ITypeHelperService _typeHelperService;
         private readonly IPropertyMappingContainer _propertyMappingContainer;
+        private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly IPostImageRepository _postImageRepository;
 
         public PostController(
             IPostRepository postRepository,
@@ -36,7 +45,9 @@ namespace BlogDemo.Api.Controllers
             IMapper mapper,
             IUrlHelper urlHelper,
             ITypeHelperService typeHelperService,
-            IPropertyMappingContainer propertyMappingContainer
+            IPropertyMappingContainer propertyMappingContainer,
+            IHostingEnvironment hostingEnvironment,
+            IPostImageRepository postImageRepository
         )
         {
             _urlHelper = urlHelper;
@@ -48,6 +59,7 @@ namespace BlogDemo.Api.Controllers
             _postRepository = postRepository;
         }
 
+        [AllowAnonymous]
         [HttpGet(Name = "GetPosts")]
         [RequestHeaderMatchingMediaType("Accept", new[]{"application/vnd.awind.hateoas+json"})]
         public async Task<IActionResult> GetHateoas(PostParameters postParameters)
@@ -87,12 +99,14 @@ namespace BlogDemo.Api.Controllers
                 postList.TotalItemsCount,
                 postList.PageCount,
             };
-            Response.Headers.Add("X-Paginated", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
             {
                 ContractResolver = new CamelCasePropertyNamesContractResolver()
             }));
             return Ok(result);
-    }
+        }
+
+        [AllowAnonymous]
 
         [HttpGet(Name = "GetPosts")]
         [RequestHeaderMatchingMediaType("Accept", new[] { "application/json" })]
@@ -174,7 +188,9 @@ namespace BlogDemo.Api.Controllers
             }
 
             var newPost = _mapper.Map<PostAddResource, Post>(postAddResource);
-            newPost.Author = "admin";
+
+            var userName = User.Claims.FirstOrDefault(x => x.Type == JwtClaimTypes.PreferredUserName)?.Value;
+            newPost.Author = userName;
             newPost.LastModified = DateTime.Now;
 
             _postRepository.AddPost(newPost);

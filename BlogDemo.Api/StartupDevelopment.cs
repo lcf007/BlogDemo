@@ -22,8 +22,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using System.Linq;
+using BlogDemo.Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace BlogDemo.Api
 {
@@ -66,7 +68,7 @@ namespace BlogDemo.Api
             services.AddHttpsRedirection(options =>
                 {
                     options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-                    options.HttpsPort = 5001;
+                    options.HttpsPort = 6001;
                 });
 
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
@@ -80,6 +82,7 @@ namespace BlogDemo.Api
             {
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddScoped<IPostImageRepository, PostImageRepository>();
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -87,6 +90,7 @@ namespace BlogDemo.Api
 
             services.AddTransient<IValidator<PostAddResource>, PostAddOrUpdateResourceValidator<PostAddResource>>();
             services.AddTransient<IValidator<PostUpdateResource>, PostAddOrUpdateResourceValidator<PostUpdateResource>>();
+            services.AddTransient<IValidator<PostImageResource>, PostImageResourceValidator>();
 
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IUrlHelper>(factory =>
@@ -101,8 +105,19 @@ namespace BlogDemo.Api
 
             services.AddTransient<ITypeHelperService, TypeHelperService>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAngularDevOrigin",
+                    builder => builder.WithOrigins("http://localhost:4200")
+                        .WithExposedHeaders("X-Pagination")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                );
+            });
+
             services.Configure<MvcOptions>(options =>
             {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowAngularDevOrigin"));
                 var policy = new AuthorizationPolicyBuilder()
                     .RequireAuthenticatedUser()
                     .Build();
@@ -119,7 +134,9 @@ namespace BlogDemo.Api
             //app.UseDeveloperExceptionPage();
             app.UseMyExceptionHandler(loggerFactory);
 
+            app.UseCors("AllowAngularDevOrigin");
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
             app.UseAuthentication();
             app.UseMvc();
         }

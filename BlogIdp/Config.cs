@@ -5,6 +5,7 @@
 using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
+using IdentityModel;
 
 namespace BlogIdp
 {
@@ -24,7 +25,13 @@ namespace BlogIdp
         {
             return new ApiResource[]
             {
-                new ApiResource("restapi", "My RESTful API")
+                new ApiResource("restapi", "My RESTful API",
+                    new List<string>{
+                        "name",
+                        JwtClaimTypes.PreferredUserName,
+                        JwtClaimTypes.Picture
+                    }
+                )
             };
         }
 
@@ -57,25 +64,29 @@ namespace BlogIdp
                 // SPA client using implicit flow
                 new Client
                 {
-                    ClientId = "spa",
-                    ClientName = "SPA Client",
-                    ClientUri = "http://identityserver.io",
+                    ClientId = "blog-client",
+                    ClientName = "blog-client",
+                    ClientUri = "http://localhost:4200",
 
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
+                    RequireConsent = false,
+                    AccessTokenLifetime = 180,
 
                     RedirectUris =
                     {
-                        "http://localhost:5002/index.html",
-                        "http://localhost:5002/callback.html",
-                        "http://localhost:5002/silent.html",
-                        "http://localhost:5002/popup.html",
+                        "http://localhost:4200/signin-oidc",
+                        "http://localhost:4200/redirect-silentrenew"
                     },
 
-                    PostLogoutRedirectUris = { "http://localhost:5002/index.html" },
-                    AllowedCorsOrigins = { "http://localhost:5002" },
+                    PostLogoutRedirectUris = { "http://localhost:4200/" },
+                    AllowedCorsOrigins = { "http://localhost:4200" },
 
-                    AllowedScopes = { "openid", "profile", "api1" }
+                    AllowedScopes = {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        "restapi" }
                 }
             };
         }

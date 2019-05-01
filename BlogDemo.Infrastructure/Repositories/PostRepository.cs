@@ -25,7 +25,7 @@ namespace BlogDemo.Infrastructure.Repositories
             if (!string.IsNullOrEmpty(postParameters.Title))
             {
                 var title = postParameters.Title.ToLowerInvariant();
-                query = query.Where(x => x.Title.ToLowerInvariant() == title);
+                query = query.Where(x => x.Title.ToLowerInvariant().Contains(title));
             }
 
             query = query.ApplySort(postParameters.OrderBy, _propertyMappingContainer.Resolve<PostResource, Post>());

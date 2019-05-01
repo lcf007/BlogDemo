@@ -16,7 +16,7 @@ namespace BlogDemo.Infrastructure.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
-            modelBuilder.Entity("BlogDemo.Core.Post", b =>
+            modelBuilder.Entity("BlogDemo.Core.Entities.Post", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -35,6 +35,20 @@ namespace BlogDemo.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Posts");
+                });
+
+            modelBuilder.Entity("BlogDemo.Core.Entities.PostImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PostImages");
                 });
 #pragma warning restore 612, 618
         }

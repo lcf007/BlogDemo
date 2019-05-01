@@ -84,8 +84,21 @@ namespace BlogIdp
             services.AddHttpsRedirection(options =>
             {
                 options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-                options.HttpsPort = 50001;
+                options.HttpsPort = 5001;
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AngularDev",
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:4200")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    }
+                );
+            });
+
         }
 
         public void Configure(IApplicationBuilder app)
@@ -101,6 +114,7 @@ namespace BlogIdp
                 app.UseHsts();
             }
 
+            app.UseCors();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseIdentityServer();
